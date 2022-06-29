@@ -1,6 +1,6 @@
-# defining main function
+#defining main function
 def main() :
-    student_details = dict(
+    student_details = {
         'student_name' : 'Aaryan Singh', 
 
         'student_id' : '10274906', 
@@ -14,20 +14,20 @@ def main() :
 
         'movies' : 
         [
-            dict(
+            {
                 'title' : 'Hangover (I, II, III)', 
                 'genre' : 'Comedy'
-            ), 
-            dict(
-                'title' : 'Bubble' 
+            }, 
+            {
+                'title' : 'Bubble', 
                 'genre' : [
                 'anime',
                 'parkour',
                 'adventure']
-            )
+            }
         ]
 
-    )
+    }
 
     # adding a new movie
     new_movie = {'title' : 'Django Unchained', 'genre' : ['Comedy', 'Brutal']}
@@ -52,35 +52,39 @@ def adding_topping(details, new_topping) :
 
 #to print a sentence using data from main
 def printing_sentence(details) : 
-    sentence = f"My name is" + {details['student_name']} + "but you can call me Sir" + {details['student_name'].removesuffix('Singh')} + '.\n'
+    sentence = f"My name is" + {details['student_name']} + "but you can call me Sir" + {details['student_name'].removesuffix('Singh')} + '.'\
     "My student ID is" + {details['student_id']}  
-    print(sentence, "end = '\n\n'")
+    print(sentence , "end = '\n\n'")
 
 #printing the toppings with bullets
-def bullets_toppings(details) :
+def bullets_toppings(student_details) :
     print("My favourite toppings are:")
 
-    for p in details['topping']:
+    for p in student_details['topping']:
         print(f"- {p}")
     print()
 
 #printing genres
-def comma_genre(details) :
+def comma_genre(student_details) :
     print(f"My goto genres are", end='')
-    for i,g in enumerate(details['movies']) :
+    for i,g in enumerate(student_details['movies']) :
         print(g['genre'], end='')
-        if i < len(details['movies'])-1:
+        if i < len(student_details['movies'])-1:
             print(', ', end='')
     print('.', end='\n\n')
 
 #printing movies
-def comma_genre(details) :
+def comma_genr(student_details) :
     print(f"My favourite movies are", end='')
-    for i,g in enumerate(details['movies']) :
+    for i,g in enumerate(student_details['movies']) :
         print(g['title'], end='')
-        if i < len(details['movies'])-1:
+        if i < len(student_details['movies'])-1:
             print(', ', end='')
     print('.', end='\n\n')
 
-#calling main function
+#calling the main function
 main()
+printing_sentence(main)
+bullets_toppings(main)
+comma_genre(main)
+comma_genr(main)
